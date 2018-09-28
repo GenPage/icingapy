@@ -33,47 +33,53 @@ class IcingaClient:
         """
         payload = {'host': host}
 
-        r = requests.get(self.host + 'cgi-bin/icinga/status.cgi', auth=(self.username, self.password), params=payload,
+        r = requests.get(self.host + '/cgi-bin/icinga/status.cgi', auth=(self.username, self.password), params=payload,
                          verify=False)
         soup = BeautifulSoup(r.text, 'html.parser')
 
         summary = {}
         table = soup.find('table', attrs={'class': 'status'})
-        for row in table.findAll('tr'):
-            cols = row.find_all('td')
+        for row in table.findAll('tr', recursive=False):
+            cols = row.find_all('td', recursive=False)
             serv = {}
-            if len(cols) >= 10:
-                service = cols[-10]
-                if not service:
+            try:
+                service = cols[1].text.strip()
+                if service == '':
                     continue
+            except IndexError:
+                continue
 
-                serv['service'] = service.text.strip()
+            serv['service'] = service
 
-                status = cols[-6]
-                if status:
-                    serv['status'] = status.text
+            status = row.find('td', attrs={'class', 'statusOK'})
+            if status:
+                serv['status'] = status.text
 
-                info = cols[-2]
+            try:
+                info = cols[6]
                 if info:
                     serv['info'] = info.text
-                summary[serv['service']] = serv
+            except IndexError:
+                pass
+
+            summary[serv['service']] = serv
 
         return summary
 
     def status(self, host: AnyStr, service: AnyStr) -> Dict:
         payload = {'host': host, 'service': service, 'type': 2}
 
-        r = requests.get(self.host + 'cgi-bin/icinga/extinfo.cgi', auth=(self.username, self.password), params=payload,
+        r = requests.get(self.host + '/cgi-bin/icinga/extinfo.cgi', auth=(self.username, self.password), params=payload,
                          verify=False)
         soup = BeautifulSoup(r.text, 'html.parser')
-
-        state = soup.find('td', attrs={'class': 'stateInfoTable1'}).find_next('td', text='Current Status:').next_sibling.text.replace('\xa0', ' ')
-
-        info = soup.find('td', attrs={'class': 'stateInfoTable1'}).find_next('td', text='Status Information:').next_sibling.text
-
-        lastcheck = soup.find('td', attrs={'class': 'stateInfoTable1'}).find_next('td', text='Last Check Time:').next_sibling.text
-
-        return {'service': service, 'state': state, 'info': info, 'last-check': lastcheck}
+        table = soup.find('td', attrs={'class': 'stateInfoTable1'})
+        if table:
+            state = table.find_next('td', text='Current Status:').next_sibling.text.replace('\xa0', ' ')
+            info = table.find_next('td', text='Status Information:').next_sibling.text
+            lastcheck = table.find_next('td', text='Last Check Time:').next_sibling.text
+            return {'service': service, 'state': state, 'info': info, 'last-check': lastcheck}
+        else:
+            return {}
 
     def downtime(self, host: AnyStr, service=None, expire_timedate=None, msg='') -> bool:
         if not expire_timedate:
@@ -97,7 +103,7 @@ class IcingaClient:
             payload['cmd_typ'] = "86"
             payload['host'] = str(host)
 
-        r = requests.post(self.host + 'cgi-bin/icinga/cmd.cgi', data=payload, auth=(self.username, self.password),
+        r = requests.post(self.host + '/cgi-bin/icinga/cmd.cgi', data=payload, auth=(self.username, self.password),
                           verify=False)
         soup = BeautifulSoup(r.text, 'html.parser')
 
