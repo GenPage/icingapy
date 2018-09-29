@@ -39,30 +39,31 @@ class IcingaClient:
 
         summary = {}
         table = soup.find('table', attrs={'class': 'status'})
-        for row in table.findAll('tr', recursive=False):
-            cols = row.find_all('td', recursive=False)
-            serv = {}
-            try:
-                service = cols[1].text.strip()
-                if service == '':
+        if table:
+            for row in table.findAll('tr', recursive=False):
+                cols = row.find_all('td', recursive=False)
+                serv = {}
+                try:
+                    service = cols[1].text.strip()
+                    if service == '':
+                        continue
+                except IndexError:
                     continue
-            except IndexError:
-                continue
 
-            serv['service'] = service
+                serv['service'] = service
 
-            status = row.find('td', attrs={'class', 'statusOK'})
-            if status:
-                serv['status'] = status.text
+                status = row.find('td', attrs={'class', 'statusOK'})
+                if status:
+                    serv['status'] = status.text
 
-            try:
-                info = cols[6]
-                if info:
-                    serv['info'] = info.text
-            except IndexError:
-                pass
+                try:
+                    info = cols[6]
+                    if info:
+                        serv['info'] = info.text
+                except IndexError:
+                    pass
 
-            summary[serv['service']] = serv
+                summary[serv['service']] = serv
 
         return summary
 
@@ -83,7 +84,7 @@ class IcingaClient:
 
     def downtime(self, host: AnyStr, service=None, expire_timedate=None, msg='') -> bool:
         if not expire_timedate:
-            expire_timedate = {'hour': 1}
+            expire_timedate = {'hours': 1}
 
         payload = {
             'start_time': datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S'),
