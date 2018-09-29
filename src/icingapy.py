@@ -109,4 +109,3 @@ class IcingaClient:
         soup = BeautifulSoup(r.text, 'html.parser')
 
         return bool(soup.find('div', attrs={'class': 'successMessage'}))
-
