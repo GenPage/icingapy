@@ -7,9 +7,10 @@ matrix:
     - python: 3.6
       env: TOXENV=pep8
   fast_finish: true
+before_install: pip install codecov
 install: pip install tox
 script: tox
-
+after_success: codecov
 deploy:
   provider: pypi
   user: genpage
