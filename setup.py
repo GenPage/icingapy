@@ -5,6 +5,6 @@ from setuptools import setup
 setup(
     setup_requires=['pbr'],
     package_dir={'': 'src'},
-    py_moculdes=['icingapy'],
+    py_modules=['icingapy'],
     pbr=True,
 )

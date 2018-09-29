@@ -1,0 +1,25 @@
+CHANGES
+=======
+
+0.1.1
+-----
+
+* Re-releasing 0.1.1
+* Update .travis.yml
+* Releasing 0.1.1
+* Maybe TravisCI is case-sensitive for deploy.on.repo
+* Okay fix broken setuptool cuz README is now rst
+* First doc pass
+* Final icingapy refactor
+* PEP8 fixes
+* Setup Codecov differently
+* Setup code coverage
+* pep8 setting in tox.ini
+* Remove python 3.7 testing for now
+* Fix setup.py renaming
+* Initial unit-tests using Travis CI, Tox, py.test, vcrpy
+* Fix default downtime, status errors
+* Fix Readme, setup initial docs
+* Source fixes, initial setuptools
+* Initial working commit
+* Initial commit
