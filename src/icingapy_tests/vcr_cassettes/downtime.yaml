@@ -1,0 +1,64 @@
+interactions:
+- request:
+    body: start_time=2018-09-29+17%3A24%3A14&end_time=2018-09-29+18%3A24%3A14&com_data=until+logrotate&cmd_mod=2&fixed=1&trigger=0&com_author=admin&btnSubmit=Commit&cmd_typ=56&hostservice=localhost%5EDisk+Space
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic YWRtaW46djNyeVNlY3JlVA==]
+      Connection: [keep-alive]
+      Content-Length: ['200']
+      Content-Type: [application/x-www-form-urlencoded]
+      User-Agent: [python-requests/2.19.1]
+    method: POST
+    uri: http://localhost/cgi-bin/icinga/cmd.cgi
+  response:
+    body:
+      string: !!binary |
+        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
+        r/0JdYNmqM4TAAA=
+    headers:
+      Cache-Control: [no-store]
+      Connection: [Keep-Alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['1835']
+      Content-Type: [text/html; charset="utf-8"]
+      Date: ['Sat, 29 Sep 2018 17:24:14 GMT']
+      Expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      Keep-Alive: ['timeout=5, max=100']
+      Last-Modified: ['Sat, 29 Sep 2018 17:24:14 GMT']
+      Pragma: [no-cache]
+      Server: [Apache/2.4.10 (Debian)]
+      Vary: [Accept-Encoding]
+    status: {code: 200, message: OK}
+version: 1

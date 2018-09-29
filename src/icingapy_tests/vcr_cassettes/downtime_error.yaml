@@ -1,0 +1,66 @@
+interactions:
+- request:
+    body: start_time=2018-09-29+17%3A31%3A22&end_time=2018-09-29+18%3A31%3A22&com_data=until+logrotate&cmd_mod=2&fixed=1&trigger=0&com_author=admin&btnSubmit=Commit&cmd_typ=56&hostservice=localhost%5EDisk+Space
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic YWRtaW46djNyeVNlY3JlVA==]
+      Connection: [keep-alive]
+      Content-Length: ['200']
+      Content-Type: [application/x-www-form-urlencoded]
+      User-Agent: [python-requests/2.19.1]
+    method: POST
+    uri: http://localhost/cgi-bin/icinga/cmd.cgi
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Cache-Control: [no-store]
+      Connection: [Keep-Alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['1982']
+      Content-Type: [text/html; charset="utf-8"]
+      Date: ['Sat, 29 Sep 2018 17:31:22 GMT']
+      Expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      Keep-Alive: ['timeout=5, max=100']
+      Last-Modified: ['Sat, 29 Sep 2018 17:31:22 GMT']
+      Pragma: [no-cache]
+      Server: [Apache/2.4.10 (Debian)]
+      Vary: [Accept-Encoding]
+    status: {code: 200, message: OK}
+version: 1

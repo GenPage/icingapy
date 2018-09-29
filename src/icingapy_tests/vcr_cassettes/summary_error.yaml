@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic YWRtaW46djNyeVNlY3JlVA==]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.19.1]
+    method: GET
+    uri: http://localhost/cgi-bin/icinga/status.cgi?host=localhost
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Cache-Control: [no-store]
+      Connection: [Keep-Alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['1589']
+      Content-Type: [text/html; charset="utf-8"]
+      Date: ['Sat, 29 Sep 2018 17:31:22 GMT']
+      Expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      Keep-Alive: ['timeout=5, max=100']
+      Last-Modified: ['Sat, 29 Sep 2018 17:31:22 GMT']
+      Pragma: [no-cache]
+      Server: [Apache/2.4.10 (Debian)]
+      Vary: [Accept-Encoding]
+    status: {code: 200, message: OK}
+version: 1

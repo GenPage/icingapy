@@ -1,0 +1,92 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic YWRtaW46djNyeVNlY3JlVA==]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.19.1]
+    method: GET
+    uri: http://localhost/cgi-bin/icinga/extinfo.cgi?host=localhost&service=Current+Load&type=2
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Cache-Control: [no-store]
+      Connection: [Keep-Alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['3583']
+      Content-Type: [text/html; charset="utf-8"]
+      Date: ['Sat, 29 Sep 2018 17:24:14 GMT']
+      Expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      Keep-Alive: ['timeout=5, max=100']
+      Last-Modified: ['Sat, 29 Sep 2018 17:24:14 GMT']
+      Pragma: [no-cache]
+      Server: [Apache/2.4.10 (Debian)]
+      Vary: [Accept-Encoding]
+    status: {code: 200, message: OK}
+version: 1
