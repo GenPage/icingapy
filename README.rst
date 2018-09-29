@@ -1,8 +1,3 @@
-.. icingapy documentation master file, created by
-   sphinx-quickstart on Fri Sep 28 14:15:41 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 ########
 Icingapy
 ########
@@ -60,14 +55,3 @@ True
    :target: https://travis-ci.com/GenPage/icingapy
 .. |Coverage Status| image:: https://codecov.io/gh/GenPage/icingapy/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/GenPage/icingapy
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
