@@ -15,8 +15,7 @@ deploy:
   provider: pypi
   user: genpage
   distributions: sdist bdist_wheel
-  password:
-    secure: "JYeJlgec7zEfkhH/+T4lWJ3/2LC01clbagO4CchSwgHYh4udSyJZjI7gNUdly02bjPcdn4qfGpUCKiO5wrLjc2nMtEpEyrbezS+Eav6YFgzNDZfgxMn1HaftthLbqQOF8kO8VDRquOBLjKwKlMdeDwGZ955eNLeqZNs6lBHkE8WgfzYF+5Z9rb2w9MngbwoqCnzArA4S4rjvSAMa7Zth6aavsBc87H/PxPeMWDRyaK1zQ39fIP3an14pVE4wdnx8bpvWZfLTiNFC/vvtvhKe49i3+Nlk7Hdxp8flidMHp8+90VNr4aopl8d/euuKbmkjmJX+4ZUa3aoEClx09ZwqnrM32HQMnInevhF0WaLhuFUjw713hpg82/aVnyB30GCu+5JYHOT5szKNgQkDWWiLIoIVOJbbzyr6u3kLRzkGm3FlJN82xmz6RH/ouzQFyrZdNluBehUL1jAZ+H8Oo51Mu9JciBV0qcR19NcNSIHLL7wswrzzJJ95s/+wHvRVhvXEphgGn02kOgusZEiv+DwkZrcHnnNowgjYXtoYa398uOF3JChDFhwOP4Mn78bJHkhy1QkEL6m2xIcrCwxpVf5f/ogshlzT2cUT2jT0+/s8DtoONZnH3E13N1CVdiV0ARijwtFGffG2RwbHmIUQk5M5bf0nrDqDNObCAfTRiYgOFnU="
+  password: ${PYPI_PASSWORD}
   on:
     tags: true
     repo: GenPage/icingapy
